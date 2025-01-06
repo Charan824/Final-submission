@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            color: #0277bd;
+            font-family: Arial, sans-serif;
+        }
+        .product-details {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-details img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product-details h2 {
+            text-align: center;
+            color: #01579b;
+        }
+        .product-details p {
+            margin: 10px 0;
+        }
+        .product-details .price {
+            font-size: 1.5em;
+            color: #d32f2f;
+        }
+        .product-details button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .product-details button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-details">
+        <img src="./images/image copy 2.png" alt="Smartphone">
+        <h2>Smartphone</h2>
+        <p>Latest model with advanced features.</p>
+        <p class="price">Price: ₹50,000</p>
+        <button onclick="buyNow('Smartphone', '₹50,000')">Buy Now</button>
+        <button>Add to Cart</button>
+    </div>
+    <script>
+        function buyNow(product, price) {
+            window.location.href = `/checkout?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+        }
+    
+        document.getElementById('search').addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            const products = document.querySelectorAll('.product-item');
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchQuery)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    
+        // Carousel functionality
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+    
+        function showNextItem() {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalItems;
+            items[currentIndex].classList.add('active');
+        }
+    
+        setInterval(showNextItem, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>

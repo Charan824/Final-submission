@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            color: #0277bd;
+            font-family: Arial, sans-serif;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-container h2 {
+            text-align: center;
+            color: #01579b;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 100px;
+            height: auto;
+        }
+        .cart-item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .cart-item-details p {
+            margin: 5px 0;
+        }
+        .cart-item-price {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>My Cart</h2>
+        <div class="cart-item">
+            <img src="./images/image copy 2.png" alt="Smartphone">
+            <div class="cart-item-details">
+                <p><strong>Smartphone</strong></p>
+                <p>Latest model with advanced features.</p>
+                <p class="cart-item-price">Price: ₹50,000</p>
+            </div>
+        </div>
+        <div class="cart-item">
+            <img src="./images/1.png" alt="Laptop">
+            <div class="cart-item-details">
+                <p><strong>Laptop</strong></p>
+                <p>High performance for work and play.</p>
+                <p class="cart-item-price">Price: ₹70,000</p>
+            </div>
+        </div>
+        <div class="cart-item">
+            <img src="./images/image copy.png" alt="Smartwatch">
+            <div class="cart-item-details">
+                <p><strong>Smartwatch</strong></p>
+                <p>Stay connected on the go.</p>
+                <p class="cart-item-price">Price: ₹15,000</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
